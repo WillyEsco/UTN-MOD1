@@ -13,7 +13,10 @@ public class clase3 {
         System.out.println(" \n");
         System.out.println("Ejercicio 2");
         codificar( "hola que tal", 1);
+        decodificar( "ipmbrvfub", 1);
+        
         codificar( "hola que tal", 2);
+        decodificar( "jqncswgvc", 2);
         System.out.println(" \n");
     }
     public static void buscoRepeEnCadena(String cadena, char letra) {
@@ -105,13 +108,13 @@ public static void sumarNrosMayoresA(int[] vector, int x) {
 }
 
 public static void codificar(String cadena, int desplazamiento) {
-    char[] abecedario = "abcdefghijklmnñopqrstuvwxyz".toCharArray();
+    char[] abecedario = "abcdefghijklmnñopqrstuvwxyz ".toCharArray();
     char[] cadenaChar = cadena.toCharArray();
     char[] cadenaCodificada = new char[cadenaChar.length];
     for (int i = 0; i < cadenaChar.length-1; i++) {
         for (int j = 0; j < abecedario.length-1; j++) {
             if (cadenaChar[i] == abecedario[j]) {
-                if (j + desplazamiento < abecedario.length-1) {
+                if (j + desplazamiento < abecedario.length) {
                     cadenaCodificada[i] = abecedario[j + desplazamiento];
                 } else {
                     cadenaCodificada[i] = abecedario[j + desplazamiento - abecedario.length];
@@ -119,6 +122,24 @@ public static void codificar(String cadena, int desplazamiento) {
             }
         }
     }
-    System.out.println("La cadena codificada es: " + String.valueOf(cadenaCodificada));
+    System.out.println("La cadena codificada es: " + String.valueOf(cadenaCodificada) + " Con desplazamiento: "+ desplazamiento);
+}
+public static void decodificar(String cadena, int desplazamiento) {
+    char[] abecedario = "abcdefghijklmnñopqrstuvwxyz ".toCharArray();
+    char[] cadenaChar = cadena.toCharArray();
+    char[] cadenaDecodificada = new char[cadenaChar.length];
+
+    for (int i = 0; i < cadenaChar.length-1; i++) {
+        for (int j = 0; j < abecedario.length; j++) {
+            if (cadenaChar[i] == abecedario[j]) {
+                if (j - desplazamiento > 0) {
+                    cadenaDecodificada[i] = abecedario[j - desplazamiento];
+                } else {
+                    cadenaDecodificada[i] = abecedario[abecedario.length - desplazamiento];
+                }
+            }
+        }
+    }
+    System.out.println("La cadena decodificada es: " + String.valueOf(cadenaDecodificada) + " Con desplazamiento: "+ desplazamiento);
 }
 }
