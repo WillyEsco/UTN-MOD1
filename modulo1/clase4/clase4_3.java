@@ -13,8 +13,10 @@ public class clase4_3 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Ingrese el nombre del archivo de entrada: ");
+        // C:\\Users\\Willy\\Desktop\\PracticaJava\\modulo1\\clase4\\input.cvs
         String archivoINPUT = sc.nextLine();
         System.out.println("Ingrese el nombre del archivo de salida: ");
+        // C:\\Users\\Willy\\Desktop\\PracticaJava\\modulo1\\clase4\\output.txt
         String archivoOUTPUT = sc.nextLine();
 
         String lineaOUT = "";
@@ -25,13 +27,18 @@ public class clase4_3 {
             String [] cadena = linea.split(",");
             String payload = cadena[0];
             int despl = Integer.parseInt(cadena[1]);
-            char op = cadena[2].charAt(0);
-            if (op == 'S') {
+            char op = ' ';
+            // pedir por consola el argumento C o D para saber si para codificar o decodificar
+            System.out.println("Ingrese C para codificar o D para decodificar: ");
+            op = sc.nextLine().charAt(0);
+            
+            if (op == 'C') {
                 lineaOUT = codificar(payload,despl);
                 } else {
                 lineaOUT = decodificar(payload,despl);
             } 
-            br.close();         
+            br.close();    
+            sc.close();     
             try {
                 File archivo = new File(archivoOUTPUT);
                 FileWriter fw = new FileWriter(archivo);
