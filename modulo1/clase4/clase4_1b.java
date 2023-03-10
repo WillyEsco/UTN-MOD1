@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class clase4_1b {
    
-    public static void main(String[] args) {
+ public static void main(String[] args) {
     
         int nro1 = 0;
         int nro2 = 0;
@@ -89,7 +89,7 @@ public class clase4_1b {
             
         }
         System.out.println("El orden " + orden + " es: " + vector[0] + " " + vector[1] + " " + vector[2] );
-    }
+    }   
 
 }
 
