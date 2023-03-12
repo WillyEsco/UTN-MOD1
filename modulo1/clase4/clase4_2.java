@@ -1,6 +1,6 @@
 
-import java.nio.Files;
-import java.nio.Paths;
+import java.io.File;
+import java.io.Path;
 import java.util.Scanner;
 public class clase4_2 {
     public static void main(String[] args) {
