@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 
-public class clase4_1c {
+public class Clase4_1c {
    
     public static void main(String[] args) {
      

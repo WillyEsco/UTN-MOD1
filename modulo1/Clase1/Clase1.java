@@ -1,7 +1,8 @@
+package Clase1;
 
 	import java.util.Scanner;
 
-public class clase1 {
+public class Clase1 {
 
 	public static void main(String[] args) {
 		// Ejercicio 1 ------------------------------------------------------------------------------------------------

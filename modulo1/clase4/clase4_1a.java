@@ -1,5 +1,5 @@
-
-public class clase4_1a {
+import Clase3.Clase3;
+public class Clase4_1a {
    
     public static void main(String[] args) {
         System.out.println("***** Ejercicio 1.a *****");
@@ -8,18 +8,22 @@ public class clase4_1a {
             int nro1 = Integer.parseInt(args[0]);
             int nro2 = Integer.parseInt(args[1]);
             int nro3 = Integer.parseInt(args[2]);
-            char orden = args[3].charAt(0);
+            String orden = args[3];
             ordenar3nros(nro1, nro2, nro3, orden);
         } else {
             System.out.println("***** E R R O R:  S I N  P A R A M E T R O S *****");
-        }
+            System.out.println("***** hardcode en main nros: 33,27,10; orden: Ascendente *****");
+            System.out.println("**************************************************************");
+            System.out.println("Resultado:");
+            ordenar3nros(33, 27, 10, "ascendente");
+        }   System.out.println("**************************************************************");
 
     }
 
  
-    public static void ordenar3nros(int a, int b, int c, char orden) {
+    public static void ordenar3nros(int a, int b, int c, String orden) {
         int[] vector = new int[3];
-        if (orden == 'A') {
+        if (orden == "ascendente") {
             if (a < b && a < c) {
                 vector[0] = a;
                 if (b < c) {
