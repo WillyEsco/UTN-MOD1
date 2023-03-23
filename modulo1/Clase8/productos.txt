@@ -1,0 +1,6 @@
+jabon en polvo,40,1
+esponjas,10,3
+chocolates,90,2
+Dulce de Leche,70,1
+Oliva Oil,12,2
+Sprite,23,6
