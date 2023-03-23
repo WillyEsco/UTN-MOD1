@@ -10,7 +10,7 @@ public class DescuentoPorcentaje extends Descuento {
 }
 @Override
 public float valorFinal(float valorInicial) {
-    return valorInicial - (valorInicial * super.getValorDesc());
+    return valorInicial - (valorInicial * super.getValorDesc() / 100);
 }
 
 }

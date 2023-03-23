@@ -3,6 +3,9 @@ package Clase8;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
+
+import Clase7.DescuentoPorcentajeConTope;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,25 +37,54 @@ public class Clase8 {
                 
                 // polimorfismo de descuento
                 // Determino nos valores de descuento fijo y porcentaje
-                Descuento desFijo = new DescuentoFijo(70);
-                Descuento desPorcentaje = new DescuentoPorcentaje(0.30f);
-
+                // Descuento desFijo = new DescuentoFijo(montoFijo);
+                // Descuento desPorcentaje = new DescuentoPorcentaje(porcentaje);
+                // Descuento desPorcentajeTope = new DescuentoPorcentajeconTope(porcen,tope);
+                
                 // pedir por pantalla el tipo de dexcuento
                 Scanner sc = new Scanner(System.in);
-                System.out.println("Ingrese el tipo de descuento: Fijo(F) / Porcentaje(P):");
-                String tipoDescuento = sc.nextLine();
+
+// elija el tipo de descuento 
+// fijo: 1. 
+// por porcentaje: 2 
+// o por porcentaje con tope: 3
+                 //  Clean console 
+                System.out.print("\033[H\033[2J");
+                System.out.flush();
+
+                System.out.println("Elija el tipo de descuento: ");
+                System.out.println("1. Descuento fijo");
+                System.out.println("2. Descuento por porcentaje");
+                System.out.println("3. Descuento por porcentaje con tope");
+                int opcion = sc.nextInt();
                 Descuento desc = null;
-                if (tipoDescuento.equals("F")) {
-                    desc = desFijo;
-                } else if (tipoDescuento.equals("P")) {
-                    desc = desPorcentaje;
-                } else {
-                    System.out.println("No se ingreso un tipo de descuento valido");
+                switch (opcion) {
+                    case 1:
+                        System.out.println("Ingrese el monto Fijo: ");
+                        float montoFijo = sc.nextFloat();
+                        desc = new DescuentoFijo(montoFijo);
+                        break;
+                    case 2:
+                        System.out.println("Ingrese el porcentaje: ");
+                        System.out.println("(ej: para 20% ingresar 20)");
+                        float porcentaje = sc.nextFloat();
+                        desc = new DescuentoPorcentaje(porcentaje);
+                        break;
+                    case 3:
+                        System.out.println("Ingrese el porcentaje: ");
+                        float porcen = sc.nextFloat();
+                        System.out.println("Ingrese el tope: ");
+                        float tope = sc.nextFloat();               
+                        desc = new DescuentoPorcentajeconTope(porcen,tope);
+                        break;
+                    default:
+                        System.out.println("Opcion invalida");
+                        break;
                 }
 
                 System.out.println("========================================");
                 System.out.println("============= F A C T U R A ============");
-
+                System.out.println("========================================");
                 System.out.println("Nombre: " + persona1.getNombre());
                 System.out.println("Apellido: " + persona1.getApellido());
                 System.out.println("Fecha de compra: " + carrito1.getFechaDeCompra());
@@ -70,7 +102,8 @@ public class Clase8 {
                 System.out.println("========================================");
              
                 sc.close();
-                  
+
+
         } catch (FileNotFoundException e) {
             System.out.println("No se pudo abrir el archivo");
             e.printStackTrace();
