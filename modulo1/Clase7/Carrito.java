@@ -12,21 +12,6 @@ public class Carrito {
         this.fechaDeCompra = fechaDeCompra;
     };
 
-    public float aplicarDescuento(char tipoDesc, int desc) {
-        float precioFinal = 0;
-       for (int i = 0; i < items.length; i++) {
-           precioFinal = precioFinal + items[i].calcularPrecio();
-         }
-
-        if (tipoDesc == 'F') {
-            return precioFinal-desc;
-        } else if (tipoDesc == '%') {
-            return precioFinal * 100 / desc;    
-        } else {
-            System.out.println("El tipo de descuento no es válido");
-            return precioFinal;
-        }
-    };
 
     public float costoFinal(int cantCuotas) {
         float total = 0; 

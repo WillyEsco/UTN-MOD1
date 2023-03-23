@@ -1,9 +1,8 @@
 package Clase8;
 
 import java.util.List;
-
+import java.io.IOException;
 public class Carrito {
-
         private List<ItemCarrito> items;
         private String fechaDeCompra;
 
@@ -24,9 +23,17 @@ public class Carrito {
         // java le pregunta a desc de que tipo es y ejecuta el metodo correspondiente
     }       
   // le agrego un parametro al metodo costo final
-    public float costoFinal(Descuento desc) { // polimosfismo
+
+  
+    public float costoFinal(Descuento desc) throws DescuentoException{ // polimosfismo
         float total = costoTotal(); 
-        return desc.valorFinal(total);
+        float costoFinal = desc.valorFinal(total);
+        if (costoFinal <= 0) {
+            throw new DescuentoException("El descuento no puede ser igual o mayor al total");
+        }else{
+            return costoFinal;
+        }
+        
         // java le pregunta a desc de que tipo es y ejecuta el metodo correspondiente
     }       
     
@@ -44,6 +51,8 @@ public class Carrito {
     public void setFechaDeCompra(String fechaDeCompra) {
         this.fechaDeCompra = fechaDeCompra;
     }
+
+
 
 
 }

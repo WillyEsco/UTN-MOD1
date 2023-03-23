@@ -3,6 +3,7 @@ package Clase8;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
+import java.io.IOException;
 
 import Clase7.DescuentoPorcentajeConTope;
 
@@ -97,13 +98,17 @@ public class Clase8 {
                 }
 
                 System.out.println("========================================");
-                System.out.println("Costo total: " + carrito1.costoTotal() +" pesos");              
-                System.out.println("Costo final: " + carrito1.costoFinal(desc) +" pesos"+ " c/desc"); 
-                System.out.println("========================================");
-             
+                System.out.println("Costo total: " + carrito1.costoTotal() +" pesos");    
+                try { 
+                    System.out.println("Costo final: " + carrito1.costoFinal(desc) +" pesos"+ " c/desc"); 
+                    System.out.println("========================================");
+                }   catch (Exception e) {
+                    System.out.println("No se pudo aplicar el descuento");
+                    System.out.println("==================================================");
+                    System.out.println(" " + e.getMessage());
+                    System.out.println("==================================================");
+                }         
                 sc.close();
-
-
         } catch (FileNotFoundException e) {
             System.out.println("No se pudo abrir el archivo");
             e.printStackTrace();

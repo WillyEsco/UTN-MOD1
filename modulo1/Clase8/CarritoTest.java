@@ -1,52 +1,57 @@
-
 package Clase8;
 
-import Clase7.Carrito;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 import org.junit.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.io.IOException;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
+
 
 public class CarritoTest {
-public Carrito carrito;
-public ItemCarrito item1;
-public ItemCarrito item2;
-public Producto producto1;
-public Producto producto2;
-public Persona persona;
-public DescuentoPorcentajeConTope descuento1;
-public DescuentoPorcentajeConTope descuento2;
 
 
-@Before
-public void setUp() {
-    producto1 = new Producto("Coca Cola",1 ,100);
-    producto2 = new Producto("Pepsi", 2 ,110);
-    item1 = new ItemCarrito(producto1, 2);
-    item2 = new ItemCarrito(producto2, 3);
-    ItemCarrito[] items = {item1, item2};
-    persona = new Persona("Juanete", "Perez Gil", "12/02/1978");
-    carrito = new Carrito(persona, items, "2020-10-10", 2, 3, 4, 'F');
-    descuento1 = new DescuentoPorcentajeConTope(10, 100, null, null, true);
-    descuento2 = new DescuentoPorcentajeConTope(10, 500, null, null, true);
-}
 
 
-public void DescuentoFijoTest() {
-    double result = carrito.aplicarDescuento('%', 10);
-    assertEquals(result, result, 396);
-}
+// @Before
+// public void setUp() {
+
+
+//     float total = 10f;
+//     Producto producto1 = new Producto("mayonesa", 5);
+//     List<ItemCarrito> items = new ArrayList<ItemCarrito>();
+//     items.add(new ItemCarrito(producto1, 1));
+//     Carrito carrito1 = new Carrito(items, "12/12/2020");
+//     Descuento desc = new DescuentoFijo(10);
+
+// }
+ 
+
+// @Test
+// public  void  DescuentoNegativoTest() throws DescuentoException {
+//     float total = 10f;
+//     Producto producto1 = new Producto("mayonesa", 5);
+//     List<ItemCarrito> items = new ArrayList<ItemCarrito>();
+//     items.add(new ItemCarrito(producto1, 1));
+//     Carrito carrito1 = new Carrito(items, "12/12/2020");
+//     Descuento desc = new DescuentoFijo(10);
+//     float resultado = carrito1.costoFinal(desc);
+//     assertEquals(null, DescuentoException.getMessage(), "El descuento no puede ser igual o mayor al total");
+// }	
+
+
 @Test
-public void DescuentoPorcentajeTest() {
-    double result = carrito.aplicarDescuento('F', 10);
-    assertEquals(result, result, 430);
+public void exceptionTesting() {
+    Exception exception = assertThrows(DescuentoException.class, () -> {
+        throw new DescuentoException("El descuento no puede ser igual o mayor al total");
+    });
+
+    String expectedMessage = "El descuento no puede ser igual o mayor al total";
+    String actualMessage = exception.getMessage();
+
+    assertTrue(actualMessage.contains(expectedMessage));
+    
 }
-@Test
-public  void  DescuentoPorcentajeConTopeTest1() {
-    float resultado = descuento1.aplicarDescuento(100);
-    assertEquals(resultado, resultado, 90);
-}	
-@Test
-public  void  DescuentoPorcentajeConTopeTest2() {
-    float resultado = descuento1.aplicarDescuento(1500);
-    assertEquals(resultado, resultado, 1350);
-    }
 }

@@ -16,6 +16,7 @@ public float getValorDesc() {
 public void setValorDesc(float valor) {
     this.valor = valor;
 }
+
 public abstract float valorFinal(float valorInicial); // descuento aplicado al valor inicial
 // Metodo abstracto, quien me herede tendrá que implementarlo
 // ...
