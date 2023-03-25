@@ -1,10 +1,10 @@
-# **Practicas - ARGENTINA PROGRAMA 4.0**
+# **Prácticas - ARGENTINA PROGRAMA 4.0**
 
 ------
 
 # **Clase 9**
 
-## Configuración de Software  
+## **Configuración de Software**  
 
 La práctica tendrá la finalidad de conocer los comandos básicos de Maven y, además, investigar y comprender la funcionalidad brindada por la biblioteca de Lombok. Es importante destacar que Lombok tiene una integración directa con el IDE IntelliJ, no así con Eclipse u otros. En caso de estar utilizando Eclipse puede leer este link, o en el caso de NetBeans este  este  link: [https://projectlombok.org/setup/netbeans]()
 
@@ -18,7 +18,7 @@ La práctica tendrá la finalidad de conocer los comandos básicos de Maven y, a
 
 # **Clase 8**
 
-## Excepciones y Colecciones
+## **Excepciones y Colecciones**
 
 1. Modifique el ejercicio del carrito de la clase 5-7, para tener una cantidad ilimitada de ítems. Verifique que cuando lea un archivo pueda leer items de cualquier tamaño
 
@@ -37,37 +37,37 @@ La práctica tendrá la finalidad de conocer los comandos básicos de Maven y, a
 
 # **Clase 7**
 
-## Herencia en Java
+## **Herencia en Java**
 
 ------
 
 # **Clase 6**
 
-## Testing  
+## **Testing**  
 
 ------
 
 # **Case 5**
 
-## Introducción a la programación OO  
+## **Introducción a la programación OO**  
 
 ------
 
 # **Clase 4**
 
-## Programas y Archivos  
+## **Programas y Archivos**  
 
 ------
 
 # **Clase 3**
 
-## Array y String  
+## **Array y String**  
 
 ------
 
 # Clase 1
 
-## Introducción a Algoritmos y Java
+## **Introducción a Algoritmos y Java**
 
 1. Vamos a practicar operaciones básicas con números
 
