@@ -3,10 +3,7 @@ package Clase8;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
-import java.io.IOException;
-
-import Clase7.DescuentoPorcentajeConTope;
-
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,8 +15,11 @@ public class Clase8 {
 
             File archivo = new File("C:\\Users\\Willy\\Desktop\\PracticaJava\\modulo1\\Clase8\\productos.txt");
             Scanner scanner = new Scanner(archivo);
-            
-
+            // tomo la fecha y hora actual del sistema y lo dejo en una variable
+            LocalDateTime fechaCompra = LocalDateTime.now();
+            Carrito carrito1 = new Carrito(items, fechaCompra);
+            Persona persona1  = new Persona("Leopoldo", "Luque", carrito1);    
+            boolean agregado = false;
       
             while (scanner.hasNextLine()) {
 
@@ -27,29 +27,21 @@ public class Clase8 {
                 String[] productos = linea.split(",");
                 String nombreProducto = productos[0];
                 float precioProducto = Float.parseFloat(productos[1]);
-                int cantidadProducto = Integer.parseInt(productos[2]);       
-                items.add(new ItemCarrito(new Producto(nombreProducto, precioProducto), cantidadProducto));
+                int cantidadProducto = Integer.parseInt(productos[2]);  
+                int codigo = Integer.parseInt(productos[3]);   
+                agregado = carrito1.agregoProd(codigo, cantidadProducto);
+                if (!agregado) {
+                    items.add(new ItemCarrito(new Producto(nombreProducto, precioProducto, codigo ), cantidadProducto));
                 }
+                }
+            
                 scanner.close();
-
-                Carrito carrito1 = new Carrito(items, "12/12/2020");
-                Persona persona1  = new Persona("Leopoldo", "Luque", carrito1);
- 
-                
-                // polimorfismo de descuento
-                // Determino nos valores de descuento fijo y porcentaje
-                // Descuento desFijo = new DescuentoFijo(montoFijo);
-                // Descuento desPorcentaje = new DescuentoPorcentaje(porcentaje);
-                // Descuento desPorcentajeTope = new DescuentoPorcentajeconTope(porcen,tope);
-                
+   
+            
                 // pedir por pantalla el tipo de dexcuento
                 Scanner sc = new Scanner(System.in);
 
-// elija el tipo de descuento 
-// fijo: 1. 
-// por porcentaje: 2 
-// o por porcentaje con tope: 3
-                 //  Clean console 
+                //  Clean console 
                 System.out.print("\033[H\033[2J");
                 System.out.flush();
 
@@ -88,7 +80,7 @@ public class Clase8 {
                 System.out.println("========================================");
                 System.out.println("Nombre: " + persona1.getNombre());
                 System.out.println("Apellido: " + persona1.getApellido());
-                System.out.println("Fecha de compra: " + carrito1.getFechaDeCompra());
+                System.out.println("Fecha de compra: " + carrito1.getFechaCompra());
 
                 System.out.println("========================================");
                 System.out.println(" Cant     precio Unit     Producto" );

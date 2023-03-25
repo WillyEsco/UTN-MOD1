@@ -3,10 +3,13 @@ package Clase8;
 public class Producto {
     private String nombre;
     private float  precio;   
+    private int codigo;
 
-    public Producto(String nombre, float precio) {
+    public Producto(String nombre, float precio, int codigo) {
         this.nombre = nombre;
         this.precio = precio;
+        this.codigo = codigo;
+
     } 
     public float costoFinal(int cantCuotas){ //método con un parámetro}
         float precioFinal = 0;
@@ -37,6 +40,12 @@ public class Producto {
     public void setPrecio(float precio) {
         this.precio = precio;
     }
-    
+    public int getCodigo() {
+        return codigo;
+    }
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
+    }
+
 
 }

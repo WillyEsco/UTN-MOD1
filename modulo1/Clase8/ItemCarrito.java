@@ -5,7 +5,6 @@ public class ItemCarrito {
     public int cantidad;
 
 
-
  public ItemCarrito(Producto producto, int cantidad) {
         this.producto = producto;
         this.cantidad = cantidad;
@@ -24,7 +23,9 @@ public class ItemCarrito {
     public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
     }
+
     public float calcularPrecio() {
         return producto.getPrecio() * cantidad;
     }
+    
 }
