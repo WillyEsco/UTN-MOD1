@@ -13,7 +13,8 @@ public class Clase8 {
         try {
             List<ItemCarrito> items = new ArrayList<ItemCarrito>();
 
-            File archivo = new File("C:\\Users\\Willy\\Desktop\\PracticaJava\\modulo1\\Clase8\\productos.txt");
+            // File archivo = new File("C:\\Users\\Willy\\Desktop\\PracticaJava\\modulo1\\Clase8\\productos.txt");
+            File archivo = new File("compras.txt"); // en el root del proyecto
             Scanner scanner = new Scanner(archivo);
             // tomo la fecha y hora actual del sistema y lo dejo en una variable
             LocalDateTime fechaCompra = LocalDateTime.now();

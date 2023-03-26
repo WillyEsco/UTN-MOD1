@@ -1,8 +1,7 @@
-# **Prácticas - ARGENTINA PROGRAMA 4.0**
-
+# **Prácticas - ARGENTINA PROGRAMA 4.0** 
 ------
 
-# **Clase 9**
+# **Clase 10**
 
 ## **Configuración de Software**  
 
@@ -16,7 +15,7 @@ La práctica tendrá la finalidad de conocer los comandos básicos de Maven y, a
 
 ------
 
-# **Clase 8**
+# **Clase 8 y 9**
 
 ## **Excepciones y Colecciones**
 
@@ -39,11 +38,33 @@ La práctica tendrá la finalidad de conocer los comandos básicos de Maven y, a
 
 ## **Herencia en Java**
 
+1. Al programa del carrito de la Clase 5, agregue un parámetro que indique si hay un descuento fijo o % y ponga el valor del mismo.
+2. Agregue un nuevo descuento %, pero que tenga un tope Fijo en una nueva clase DescuentoPorcentajeConTope
+3. Cree 2 o 3 Tests para el método “precio” del carrito, y para los 3 descuentos DescuentoFijo, DescuentoPorcentaje y DescuentoPorcentajeConTope
+4. Suba el nuevo código a GIT
+
+
 ------
 
 # **Clase 6**
 
 ## **Testing**  
+
+Implemente una clase “**Calculadora**”  que tenga cuatro métodos, uno por cada operación aritmética básica (suma, resta, multiplicación y división), respetando las siguientes firmas: 
+
+- double sumar(double unNumero, double otroNumero); 
+- double restar(double unNumero, double otroNumero);
+- double multiplicar(double unNumero, double otroNumero);
+- double dividir(double unNumero, double otroNumero);
+
+Luego de haber implementado la Calculadora, realice los siguientes casos de prueba:
+
+1. El resultado de multiplicar 80 por 3 da 240
+2. El resultado de sumar 150 y 180, dividido por 3, da 110
+3. El resultado de restar 90 y 50, multiplicado por 15, no da 605.
+4. El resultado de sumar 70 y 40, multiplicado por 25, no da 2700.
+
+Cuando termine, suba el nuevo código a GIT
 
 ------
 
@@ -51,68 +72,89 @@ La práctica tendrá la finalidad de conocer los comandos básicos de Maven y, a
 
 ## **Introducción a la programación OO**  
 
+1. Implemente usted mismo el ejemplo visto en clase de “carrito de compras”: una clase Producto (que pueda tener hasta 3 items), otra ItemCarrito, otra Carrito y otra Descuento, con 2 subclases.
+
+2. En un programa main, lea de un archivo, por ejemplo separado por Tabs o comas, una lista de items, arme los objetos correspondientes y con el método de carrito “precio”, retorne el resultado. 
+
+   Por ejemplo: cant precioUnitario producto
+
+   ```
+      
+      1, 40, jabón en polvo
+      3, 10, esponjas
+      2, 100, chocolates
+   
+      carrito.precio() == 270
+      
+   ```
+   
+3. Suba el proyecto / ejercicios a GIT
+
 ------
 
 # **Clase 4**
 
 ## **Programas y Archivos**  
 
+1. Tomando los Ejercicios de la clase anterior
+   - haga un main, donde por parámetro ponga 3 números y una letra que represente ascendente o descendente y los muestre ordenados por tal criterio
+   - haga lo mismo, pero solicitando los parámetros de a uno por consola
+   - lo mismo, pero usando los parámetros si hay alguno (como en a) y haciendo (b) si no detecta ninguno. Vea si con una función puede evitar repetir código.
+
+2. Haga una main donde por parámetro envíe la ruta de un archivo. Ese archivo debe contener números. El programa debe escribir por consola la suma de esos números
+   - Al programa anterior agréguele un parámetro para que la operación pueda ser suma o multiplicación. 
+
+3. Tome el ejercicio B de la clase 3 y que por parámetro se pueda elegir si es una codificación o decodificación, el valor del desplazo, y 2 archivos, uno para la entrada y otro para la salida. Que por pantalla solo indique si terminó o no correctamente, los resultados deben estar en el archivo de salida
+
+4. Suba el proyecto / ejercicios a GIT
+
+
 ------
 
 # **Clase 3**
 
-## **Array y String**  
+## **Array y String** 
+
+
+1. Utilizando solo tipos primitivos, String (solo usar método length), vectores, iteraciones simples y condicionales, genere una clase por ejercicio que posea los siguienes métodos:
+
+   a. Dado un String y una letra, que cuente la cantidad de apariciones de la letra en el String
+   b. Dados 3 números y un orden (ascendente o decreciente) que ordene los mismos y los retorne en un vector de 3
+   c. dado un vector de números, y un número X, que sume todos los números > X y retorne el resultado
+
+2.  Genere una clase que tenga los métodos para realizar la codificación y decodificación de un string, dado un número de desplazamiento. 
+
+      ```
+
+         // Por ejemplo, con desplazo de 1:
+
+         “hola que tal” -> “ipmbarvfaubm” 
+         h -> i
+         o -> p
+
+        // con desplazo de 2
+
+        “hola que tal” -> “jqncbswgbvcn” 
+        h -> j
+        o -> q
+
+      ```
+
+      En el ejemplo estoy usando este abecedario: "abcdefghijklmnñopqrstuvwxyz"
+
+      Para este ejercicio puede usar todos los métodos de String, tanto de instancia (por ejemplo length) como de clase, por ejemplo 
+      ```
+      String.valueOf(arr) // donde arr es un char[]. 
+      ```
+
+      Tenga a mano los javadocs del mismo: https://docs.oracle.com/javase/8/docs/api/java/lang/String.html
+
+Si tiene alguna duda de alguna parte que no vimos en clase, esta referencia es muy útil https://www.w3schools.com/java/default.asp
+
 
 ------
 
-# Clase 1
-
-## **Introducción a Algoritmos y Java**
-
-1. Vamos a practicar operaciones básicas con números
-
-2. a. Utilizando la sentencia while, imprima todos los números entre 2 variables “a” y “b”. Su código puede arrancar (por ejemplo): int numeroInicio = 5; int numeroFin = 14;
-   // Se deberían mostrar los números: 5,6,7,8,9,10,11,12,13,14
-
-   b. A lo anterior, solo muestre los números pares
-
-   c. A lo anterior, con una variable extra, elija si se deben mostrar los números pares o impares
-
-   d. Utilizando la sentencia for, hacer lo mismo que en (b) pero invirtiendo el orden
-
-3. Dado el siguiente texto, vamos a atacar el siguiente problema: “determinar si una persona pertenece al segmento de ingresos altos”. Del i al iii, la idea es hacerlo en papel y lápiz y sólo implementar el cuarto. 
-
-   “Son hogares que declaran reunir alguna de las siguientes condiciones, considerando a todas y todos los convivientes:  
-
-   ● Ingresos mensuales totales del hogar equivalentes o superiores a $489.083  (3,5 canastas básicas para un hogar tipo 2 según el INDEC).
-   ● Tener 3 o más vehículos con una antigüedad menor a 5 años.
-   ● Tener 3 o más inmuebles.
-   ● Poseer una embarcación, una aeronave de lujo o ser titular de activos societarios que demuestren capacidad económica plena.” 
-   Tomado de https://www.argentina.gob.ar/subsidios el 07/12/2022
-
-4. a. Lea atentamente el texto, primero que nada piense cuáles son las variables de entrada.
-
-   b. Ordene las entradas y salidas como vimos en la tabla del ejemplo Monotributo en clase, también puede consultar este link
-
-   c. Piense en un arbol de decision, tambien como se vio en clase si puede resolver el problema, dadas las entradas
-
-   d. Finalmente, vea si puede resolver el problema utilizando código Java. Por 
-
-   ejemplo si estuviésemos intentando resolver el ejemplo de monotributo tendríamos el código que se muestra más abajo, y cambiando las variables  
-   */pueden cambiar estas variables para ir probando/* 
-   ***float ingresos = 299000;*** 
-   ***int superficie = 20;*** 
-   ***int energia = 900;*** 
-   ***/*****************/*** 
-   **if ( (ingresos <= 748382.07) && ( superficie <= 30) && (energia <= 3330) ) **
-
-   {***System.out.println("Categoría A");***
-    ***} else***
-   *** if((ingresos <= 1112459.83) && (superficie <= 45) && (energia <= 5000) )*** 
-
-   ***{ System.out.println("Categoría B" ); }*** 
-
-## Clase 2
+#  **Clase 2**
 
 ## Git y Github
 
@@ -138,15 +180,70 @@ La práctica tendrá la finalidad de conocer los comandos básicos de Maven y, a
 
 En este punto, recomendamos, aunque no es obligatorio, que dentro de un repositorio (por ejemplo el que creó recién), tengan una carpeta por clase (dictada teórica) del curso, y dentro de cada clase tengan un proyecto con los ejercicios con los que se va avanzando. Puede arrancar subiendo los que realizó en la clase 1. Para no tener problemas, también recomendamos que en la raíz del proyecto tenga un archivo .gitignore (notar el punto “.” al principio del nombre del archivo) para evitar versionar cosas que no corresponden. Puede descargarlo/copiarlo de este link y se agrega al proyecto como cualquier otro archivo, solo que cumple la función vista en clase.
 
-## 
+------
 
-## 
+#  **Clase 1**
 
-## 
+## **Introducción a Algoritmos y Java**
 
-## 
+1. Vamos a practicar operaciones básicas con números
 
-## 
+2. a. Utilizando la sentencia while, imprima todos los números entre 2 variables “a” y “b”. Su código puede arrancar (por ejemplo): 
 
+```
+   
+   int numeroInicio = 5; 
+   int numeroFin = 14;
+   // Se deberían mostrar los números: 5,6,7,8,9,10,11,12,13,14
 
+```
 
+   b. A lo anterior, solo muestre los números pares.
+
+   c. A lo anterior, con una variable extra, elija si se deben mostrar los números     pares o impares.
+
+   d. Utilizando la sentencia for, hacer lo mismo que en (b) pero invirtiendo el orden 
+
+3. Dado el siguiente texto, vamos a atacar el siguiente problema: “determinar si una persona pertenece al segmento de ingresos altos”. Del i al iii, la idea es hacerlo en papel y lápiz y sólo implementar el cuarto. 
+
+   “Son hogares que declaran reunir alguna de las siguientes condiciones, considerando a todas y todos los convivientes:  
+
+   ● Ingresos mensuales totales del hogar equivalentes o superiores a $489.083  (3,5 canastas básicas para un hogar tipo 2 según el INDEC).
+
+   ● Tener 3 o más vehículos con una antigüedad menor a 5 años.
+
+   ● Tener 3 o más inmuebles.
+
+   ● Poseer una embarcación, una aeronave de lujo o ser titular de activos societarios que demuestren capacidad económica plena.” 
+
+   Tomado de https://www.argentina.gob.ar/subsidios el 07/12/2022
+
+4. a. Lea atentamente el texto, primero que nada piense cuáles son las variables de entrada.
+
+   b. Ordene las entradas y salidas como vimos en la tabla del ejemplo Monotributo en clase, también puede consultar este link
+
+   c. Piense en un arbol de decision, tambien como se vio en clase si puede resolver el problema, dadas las entradas
+
+   d. Finalmente, vea si puede resolver el problema utilizando código Java. Por 
+
+   ejemplo si estuviésemos intentando resolver el ejemplo de monotributo tendríamos el código que se muestra más abajo, y cambiando las variables 
+   
+   
+   
+    ```*/pueden cambiar estas variables para ir probando/* 
+      float ingresos = 299000; 
+      int superficie = 20;
+      int energia = 900;
+   /*****************/ 
+      if ((ingresos <= 748382.07) && ( superficie <= 30) && (energia <= 3330)) {
+         System.out.println("Categoría A");
+      } else
+        if((ingresos <= 1112459.83) && (superficie <= 45) && (energia <= 5000) ) { 
+         System.out.println("Categoría B" ); 
+      } 
+    ```
+
+------
+<p align="right">
+  <img  src="./modulo1/lib/logo.jpg" width="10%" height="10%" />
+</p>
